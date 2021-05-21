@@ -412,8 +412,8 @@ def today_ids() -> list:
     eastern = pytz.timezone('US/Eastern')
     date = datetime.datetime.now(eastern)
 
-    # If it is earlier than 8 then no games will have started so yesterdays game
-    if date.hour < 8:
+    # If it is earlier than 10 then no games will have started so yesterdays game
+    if date.hour < 10:
         date -= datetime.timedelta(days=1)
 
     return get_day_ids(date)
@@ -423,8 +423,9 @@ from concurrent.futures import ProcessPoolExecutor as PoolExecutor
 def today_objs() -> list[Game]:
     eastern = pytz.timezone('US/Eastern')
     date = datetime.datetime.now(eastern)
-    # If it is earlier than 8 then no games will have started so yesterdays game
-    if date.hour < 8:
+
+    # If it is earlier than 10 then no games will have started so yesterdays game
+    if date.hour < 10:
         date -= datetime.timedelta(days=1)
 
     ids_for_day = get_day_ids(date) 
