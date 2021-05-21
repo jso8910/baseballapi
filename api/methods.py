@@ -1,5 +1,5 @@
 from typing import Any, Union
-from getcumulativestats import getProbabilityOfString, getLeverageOfString
+from .getcumulativestats import getProbabilityOfString, getLeverageOfString
 import statsapi
 import datetime
 import pytz
